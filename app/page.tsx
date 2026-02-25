@@ -130,7 +130,7 @@ export default function EVreadyRegistrationPage() {
 
   return (
     <div className="flex min-h-svh flex-col bg-gradient-to-b from-green-50 to-green-100">
-      
+
       {/* ---------------- BANNER ---------------- */}
       <div className="relative w-full">
         <Image
@@ -283,6 +283,14 @@ export default function EVreadyRegistrationPage() {
                   )}
 
                   <Button
+                    type="button"
+                    disabled
+                    className="w-full bg-gray-400 cursor-not-allowed"
+                  >
+                    Registration Closed
+                  </Button>
+
+                  {/* <Button
                     type="submit"
                     disabled={submitting}
                     className="w-full bg-green-700 hover:bg-green-800"
@@ -291,7 +299,7 @@ export default function EVreadyRegistrationPage() {
                       <Loader2 className="mr-2 h-4 w-4 animate-spin" />
                     )}
                     Register Now
-                  </Button>
+                  </Button> */}
 
                 </form>
               ) : (
