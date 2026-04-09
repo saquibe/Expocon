@@ -76,14 +76,14 @@ function TermsContent({ router }: { router: ReturnType<typeof useRouter> }) {
     <div className="space-y-6">
 
       <h1 className="text-2xl font-semibold text-gray-900">
-        EVready 2026 – Karnataka’s Largest EV Expo <br />
+        South India EV Event 2026 <br />
         Registration – Terms & Conditions
       </h1>
 
       <p className="text-sm text-gray-600">
-        By registering for EVready 2026, Karnataka’s Largest EV Expo, you agree
-        to the following Terms & Conditions. Please read them carefully before
-        proceeding.
+        By registering for the South India EV Event 2026, an EV initiative by
+        Times of India, you agree to the following Terms & Conditions. Please
+        review them carefully before proceeding with your registration.
       </p>
 
       <section>
@@ -91,21 +91,19 @@ function TermsContent({ router }: { router: ReturnType<typeof useRouter> }) {
           1. Event Registration
         </h2>
         <p className="text-sm text-gray-600">
-          Registration for EVready 2026 is subject to availability and
-          successful submission of the registration form. Submission does not
-          guarantee entry unless confirmed via email.
+          Registration is subject to availability and successful submission of
+          the registration form. Completion of the form does not guarantee entry
+          unless confirmed by the organizers.
         </p>
       </section>
 
       <section>
         <h2 className="font-medium text-gray-800 mb-2">
-          2. Coupon Code Usage
+          2. Registration Validity
         </h2>
         <p className="text-sm text-gray-600">
-          Coupon codes, if provided, must be entered correctly at the time of
-          registration. Each coupon code is valid for limited use and may
-          expire without prior notice. Misuse or unauthorized sharing of
-          coupon codes may result in cancellation of registration.
+          Each registration is valid for a single attendee and is non-transferable.
+          The selected visiting day(s) will determine access to the event.
         </p>
       </section>
 
@@ -114,21 +112,20 @@ function TermsContent({ router }: { router: ReturnType<typeof useRouter> }) {
           3. Email & Mobile Information
         </h2>
         <p className="text-sm text-gray-600">
-          You are responsible for providing a valid email address and mobile
-          number. All EVready 2026 related communication, including
-          registration confirmation, registration number, and QR code, will be
-          sent to the registered email address.
+          You must provide a valid email address and mobile number. All event-related
+          communication, including confirmation, registration number, and QR code,
+          will be sent to your registered contact details.
         </p>
       </section>
 
       <section>
         <h2 className="font-medium text-gray-800 mb-2">
-          4. Registration Confirmation
+          4. Entry & Verification
         </h2>
         <p className="text-sm text-gray-600">
-          Upon successful registration, you will receive a confirmation email
-          containing your unique registration number and QR code. This QR code
-          will be required for event entry and verification at the venue.
+          Upon successful registration, you will receive a unique registration
+          number and QR code. This QR code must be presented at the venue for
+          entry and verification.
         </p>
       </section>
 
@@ -137,23 +134,22 @@ function TermsContent({ router }: { router: ReturnType<typeof useRouter> }) {
           5. Data Usage & Privacy
         </h2>
         <p className="text-sm text-gray-600">
-          Personal information collected during registration will be used
-          solely for event management, communication, verification, and
-          analytics purposes related to EVready 2026. Your data will not be
-          shared with third parties without consent, except where required by
-          law.
+          Personal information collected during registration will be used solely
+          for event management, communication, analytics, and verification
+          purposes. Your data will not be shared with third parties without
+          consent, except where required by law.
         </p>
       </section>
 
       <section>
         <h2 className="font-medium text-gray-800 mb-2">
-          6. Limitation of Liability
+          6. Event Changes & Liability
         </h2>
         <p className="text-sm text-gray-600">
-          The event organizers shall not be liable for any loss, damage, or
-          inconvenience arising from participation in EVready 2026, including
-          technical issues, communication delays, schedule changes, or
-          cancellation beyond reasonable control.
+          The organizers reserve the right to modify event schedules, venue
+          arrangements, or other details without prior notice. The organizers
+          shall not be held liable for any loss, damage, or inconvenience caused
+          due to unforeseen circumstances.
         </p>
       </section>
 
@@ -162,9 +158,8 @@ function TermsContent({ router }: { router: ReturnType<typeof useRouter> }) {
           7. Amendments
         </h2>
         <p className="text-sm text-gray-600">
-          The organizers reserve the right to modify these Terms & Conditions
-          at any time. Continued use of the registration platform implies
-          acceptance of the updated terms.
+          These Terms & Conditions may be updated at any time. Continued use of
+          the registration platform implies acceptance of the revised terms.
         </p>
       </section>
 
@@ -184,7 +179,7 @@ function TermsContent({ router }: { router: ReturnType<typeof useRouter> }) {
               </AlertDialogTitle>
               <AlertDialogDescription>
                 By confirming, you acknowledge that you have read and agree to
-                the EVready 2026 Registration Terms & Conditions.
+                the South India EV Event 2026 Registration Terms & Conditions.
               </AlertDialogDescription>
             </AlertDialogHeader>
 
@@ -192,16 +187,19 @@ function TermsContent({ router }: { router: ReturnType<typeof useRouter> }) {
               <AlertDialogCancel>
                 Cancel
               </AlertDialogCancel>
-              <AlertDialogAction
-                className="bg-green-600 hover:bg-green-700 text-white"
-                onClick={() => router.back()}
-              >
-                Confirm
+              <AlertDialogAction asChild>
+                <Button
+                  className="bg-green-600 hover:bg-green-700 text-white"
+                  onClick={() => router.back()}
+                >
+                  Confirm
+                </Button>
               </AlertDialogAction>
             </AlertDialogFooter>
           </AlertDialogContent>
         </AlertDialog>
       </div>
+
     </div>
   )
 }

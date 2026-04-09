@@ -1,26 +1,43 @@
-import z from 'zod'
+import { z } from "zod";
 
-/* -------------------- ZOD SCHEMA -------------------- */
-export const CoffeeSponsorSchema = z.object({
-  name: z
-    .string()
-    .min(1, 'Name is required'),
+/* -------------------- ENUMS -------------------- */
+export const GenderEnum = z.enum(["male", "female", "other"]);
 
- email: z
-  .string()
-  .min(1, "Email is required")
-  .trim()
-  .email("Please enter a valid email address"),
+export const VisitingDayEnum = z.enum([
+  "day1",
+  "day2",
+  "day3",
+  "all",
+]);
 
+/* -------------------- MAIN SCHEMA -------------------- */
+export const EVEventRegistrationSchema = z.object({
+  name: z.string().trim().min(2, "Name must be at least 2 characters"),
+
+  age: z.coerce
+    .number()
+    .min(18, "Minimum age is 18")
+    .max(100, "Invalid age"),
+
+  address: z.string().trim().min(5, "Address is required"),
+
+  city: z.string().trim().min(2, "City is required"),
 
   mobile: z
     .string()
-    .min(10, 'Mobile number must be at least 10 digits')
-    .max(10, 'Mobile number must not exceed 10 digits'),
+    .trim()
+    .regex(/^[6-9]\d{9}$/, "Enter a valid Indian mobile number"),
 
-  couponId: z
-    .string()
-    .min(1, 'select one option'),
-})
+  email: z.string().trim().email("Enter a valid email address"),
 
-export type CoffeeSponsorForm = z.infer<typeof CoffeeSponsorSchema>
+  gender: GenderEnum,
+
+  profession: z.string().trim().min(2, "Profession is required"),
+
+  visitingDay: VisitingDayEnum,
+});
+
+/* -------------------- TYPE -------------------- */
+export type EVEventRegistrationForm = z.output<
+  typeof EVEventRegistrationSchema
+>;
